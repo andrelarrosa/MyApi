@@ -48,9 +48,18 @@ class Consorcio
             $sql = $con->prepare($sql);
             $sql->bindValue(":id", $id);
             $sql->execute();
+            $result = array();
+        
+            while($row = $sql->fetch(PDO::FETCH_ASSOC)){
+                $result[] = $row;
+            }
+            
+            return json_encode($result);
         }catch(Exception $e){
             throw new Exception("Não foi possível deletar esse consórcio");
         }
+
+        
     }
 }
 

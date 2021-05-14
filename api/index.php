@@ -38,7 +38,6 @@ class Rest
 
 if(isset($_REQUEST)){
     echo Rest::open($_REQUEST);
-    return Rest::open($_REQUEST);
 }
 
 
